@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zheng.blogserver.mapper.SortMapper">
+    <select id="querySortById" resultType="sort">
+        select *
+        from zj_sorts
+        where sort_id = #{sort_id}
+  </select>
+</mapper>

@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useEncoding=true&CharacterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  # 别名
+  type-aliases-package: com.zheng.blogserver.beans
+  # 指定mapper映射文件的位置
+  mapper-locations: classpath:mapper/*
