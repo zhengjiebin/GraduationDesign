@@ -3,9 +3,5 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zheng.blogserver.mapper.LabelMapper">
-    <select id="queryLabelById" resultType="label">
-        select *
-        from zj_labels
-        where label_id = #{label_id}
-  </select>
+
 </mapper>

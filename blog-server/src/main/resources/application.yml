@@ -1,12 +1,13 @@
 server:
   port: 8080
 
+
 spring:
   datasource:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useEncoding=true&CharacterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useUnicode=true&characterEncoding=UTF8
     type: com.alibaba.druid.pool.DruidDataSource
 
 mybatis:
