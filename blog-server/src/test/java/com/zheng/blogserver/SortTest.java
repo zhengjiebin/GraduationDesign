@@ -47,4 +47,18 @@ public class SortTest {
         sortMapper.updateSort(sort);
         queryAllSort();
     }
+
+    @Test
+    public void querySortByName(){
+        Sort sort = sortMapper.querySortByName("摄影");
+        System.out.println(sort);
+    }
+
+    @Test
+    public void queryChildSort(){
+        List<Sort> sorts = sortMapper.queryChildSort(1);
+        for (Sort sort : sorts) {
+            System.out.println(sort);
+        }
+    }
 }

@@ -21,6 +21,12 @@ public interface LabelMapper {
     public Label queryLabelById(Integer id);
 
     /*
+    * 按标签名查询
+    * */
+    @Select("select * from zj_labels where label_name=#{name}")
+    public Label queryLabelByName(String name);
+
+    /*
     * 添加一个标签
     * */
     @Options(useGeneratedKeys = true,keyProperty = "labelId",keyColumn = "label_id")
@@ -36,7 +42,7 @@ public interface LabelMapper {
     /*
     * 修改标签
     * */
-    @Update("update zj_labels set label_id=#{labelId},label_name=#{labelName},label_alias=#{labelAlias},label_description=#{labelDescription}")
+    @Update("update zj_labels set label_name=#{labelName},label_alias=#{labelAlias},label_description=#{labelDescription} where  label_id=#{labelId}")
     public int updateLabel(Label label);
 
 

@@ -1,14 +1,23 @@
 server:
   port: 8080
-
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      force-request: true
+      force-response: true
 
 spring:
   datasource:
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useUnicode=true&characterEncoding=UTF8
     type: com.alibaba.druid.pool.DruidDataSource
+  security:
+    user:
+      name: admin
+      password: admin
 
 mybatis:
   # 别名

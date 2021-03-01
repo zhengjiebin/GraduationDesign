@@ -21,8 +21,21 @@ public interface SortMapper {
     public Sort querySortById(Integer id);
 
     /*
+    * 按名称查询分类
+    * */
+    @Select("select * from zj_sorts where sort_name=#{name}")
+    public Sort querySortByName(String name);
+
+    /*
+    * 查询父分类下的子分类
+    * */
+    @Select("select * from zj_sorts where parent_sort_id=#{id}")
+    public List<Sort> queryChildSort(Integer id);
+
+    /*
     * 增加一个分类
     * */
+    @Options(useGeneratedKeys = true,keyProperty = "sortId",keyColumn = "sort_id")
     @Insert("insert into zj_sorts(sort_name,sort_alias,sort_description,parent_sort_id) values(#{sortName},#{sortAlias},#{sortDescription},#{parentSortId})")
     public int addSort(Sort sort);
 
