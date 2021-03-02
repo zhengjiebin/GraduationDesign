@@ -33,4 +33,5 @@ public class ResultUtil {
         result.setData(t);
         return result;
     }
+
 }

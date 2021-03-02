@@ -2,6 +2,7 @@ package com.zheng.blogserver;
 
 import com.zheng.blogserver.beans.Sort;
 import com.zheng.blogserver.mapper.SortMapper;
+import com.zheng.blogserver.utils.IDUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +31,7 @@ public class SortTest {
 
     @Test
     public void addSort(){
-        Sort sort = new Sort(null,"生活","Life","life",1);
+        Sort sort = new Sort(IDUtil.getId(),"生活","Life","life",1);
         int i = sortMapper.addSort(sort);
         queryAllSort();
     }
@@ -43,7 +44,7 @@ public class SortTest {
 
     @Test
     public void updateSort(){
-        Sort sort = new Sort(2,"摄影","摄影","生活",0);
+        Sort sort = new Sort(IDUtil.getId(),"摄影","摄影","生活",0);
         sortMapper.updateSort(sort);
         queryAllSort();
     }

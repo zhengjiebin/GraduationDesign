@@ -22,4 +22,7 @@ public class Sort {
     private String sortDescription;
     @ApiModelProperty("父分类id")
     private Integer parentSortId;
+
+    public Sort(String randomNickname, String 摄影, String 摄影1, String 生活, int parentSortId) {
+    }
 }

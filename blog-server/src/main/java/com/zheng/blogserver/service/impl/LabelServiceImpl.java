@@ -1,6 +1,5 @@
 package com.zheng.blogserver.service.impl;
 
-import com.alibaba.druid.util.StringUtils;
 import com.zheng.blogserver.beans.Label;
 import com.zheng.blogserver.mapper.LabelMapper;
 import com.zheng.blogserver.service.ILabelService;

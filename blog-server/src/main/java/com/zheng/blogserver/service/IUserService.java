@@ -14,17 +14,16 @@ public interface IUserService {
     /*
      * 修改头像
      * */
-    public int updateAvatar(Integer id,String address);
+    public int updateAvatar(String address);
 
     /*
      * 获取用户基本信息
      * */
-    public User queryUserBasicInfo(Integer id);
+    public User queryUserBasicInfo();
 
     /*
-     * 修改用户基本信息
+     * 查询密码
      * */
-    public int updateUserBasicInfo(String email, String birthday, Integer age, String telephone, String nickName, String description, Integer id);
-
+    public String queryUserPasswordByName(String username);
 
 }

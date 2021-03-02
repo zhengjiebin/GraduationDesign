@@ -1,26 +1,30 @@
 server:
   port: 8080
   servlet:
+#    编码(强制)
     encoding:
       charset: UTF-8
       force: true
-      force-request: true
-      force-response: true
+
+avatar:
+  path: /Users/zhengxiansen/Downloads/
 
 spring:
+#  数据源(Druid)
   datasource:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://localhost:3306/blog_system?useSSL=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
     type: com.alibaba.druid.pool.DruidDataSource
-  security:
-    user:
-      name: admin
-      password: admin
-
+  servlet:
+#    文件上传(限制10MB大小)
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 mybatis:
   # 别名
   type-aliases-package: com.zheng.blogserver.beans
   # 指定mapper映射文件的位置
   mapper-locations: classpath:mapper/*
+

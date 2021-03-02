@@ -38,7 +38,7 @@ public class SortController {
 
     @GetMapping("/sort/child")
     @ApiOperation("查询子分类")
-    public CommonResult<List<Sort>> queryChildSort(@Param("id") Integer id){
+    public CommonResult<List<Sort>> queryChildSort(Integer id){
         List<Sort> sorts = sortService.queryChildSort(id);
         if (sorts.isEmpty()) return ResultUtil.faile(ResultCode.RESULE_DATA_NONE);
         return ResultUtil.success(sorts,ResultCode.SUCCESS);
