@@ -1,6 +1,8 @@
 package com.zheng.blogserver.service.impl;
 
+import com.zheng.blogserver.beans.Article;
 import com.zheng.blogserver.beans.Comment;
+import com.zheng.blogserver.mapper.ArticleMapper;
 import com.zheng.blogserver.mapper.CommentMapper;
 import com.zheng.blogserver.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,11 @@ public class CommentServiceImpl implements ICommentService {
     @Autowired
     private CommentMapper commentMapper;
 
+    @Autowired
+    private ArticleMapper articleMapper;
+
     /*
-    * 对文章进行评论
+    * 对文章进行评论,查询当前文章有多少评论再+1
     * */
     @Override
     public int commentToArticle(Comment comment) {
@@ -23,9 +28,12 @@ public class CommentServiceImpl implements ICommentService {
         return commentMapper.commentToArticle(comment);
     }
 
+    /*
+    * 查询当前文章的评论数
+    * */
     @Override
     public int queryArticleCommentCount(Integer currentArticle) {
-        return 0;
+        return commentMapper.queryArticleCommentCount(currentArticle);
     }
 
     @Override

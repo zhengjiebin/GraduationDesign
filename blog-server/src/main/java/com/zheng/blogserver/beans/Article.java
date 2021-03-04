@@ -16,7 +16,7 @@ public class Article {
     @ApiModelProperty("博文id")
     private Integer articleId;
     @ApiModelProperty("发表用户id")
-    private Integer userId;
+    private Long userId;
     @ApiModelProperty("博文标题")
     private String articleTitle;
     @ApiModelProperty("博文内容")
@@ -29,4 +29,5 @@ public class Article {
     private Date articleDate;
     @ApiModelProperty("喜欢总数")
     private Integer articleLikeCount;
+
 }

@@ -3,6 +3,7 @@ package com.zheng.blogserver;
 import com.zheng.blogserver.beans.Article;
 import com.zheng.blogserver.beans.ArticleInfo;
 import com.zheng.blogserver.mapper.ArticleMapper;
+import com.zheng.blogserver.utils.IDUtil;
 import io.swagger.annotations.ApiModelProperty;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,7 @@ public class ArticleTest {
 
     @Test
     public void addArticle(){
-        Article article = new Article(4,1,"hello world","hello world!",0,0,new Date("2021/03/01"),0);
-        int i = articleMapper.addArticle(article);
-        if (i==0) {
-            System.out.println("发表失败");
-        }else {
-            System.out.println("发表成功");
-        }
+
     }
 
     @Test

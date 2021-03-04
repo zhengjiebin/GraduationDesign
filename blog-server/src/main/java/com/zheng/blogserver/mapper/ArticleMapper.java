@@ -63,4 +63,5 @@ public interface ArticleMapper{
     * */
     @Update("update zj_articles set article_views=#{count} where article_id=#{id}")
     public int updateArticleViews(Integer count,Integer id);
+
 }
